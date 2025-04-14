@@ -1,0 +1,54 @@
+---
+---
+<section class="py-24 bg-gray-50 dark:bg-gray-900" id="faq">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-inter font-bold mb-4">
+        Preguntas Frecuentes
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300">
+        Todo lo que necesitas saber sobre Sistema Escrow
+      </p>
+    </div>
+    <div class="max-w-3xl mx-auto divide-y divide-gray-200 dark:divide-gray-700">
+      {[
+        {
+          question: "¿Cómo funciona el sistema de garantía?",
+          answer: "Cuando realizas una compra, el dinero queda en custodia segura hasta que recibas el producto y confirmes que todo está correcto. Solo entonces, liberamos el pago al vendedor."
+        },
+        {
+          question: "¿Qué pasa si hay un problema con mi compra?",
+          answer: "Si surge algún problema, puedes abrir una disputa. Nuestro equipo de soporte investigará el caso y ayudará a resolver la situación de manera justa para ambas partes."
+        },
+        {
+          question: "¿Cuánto tiempo tarda en liberarse el pago?",
+          answer: "El pago se libera inmediatamente después de que el comprador confirma la recepción del producto en buen estado. Esto suele ocurrir en las 24 horas siguientes a la entrega."
+        },
+        {
+          question: "¿Qué métodos de pago aceptan?",
+          answer: "Aceptamos todas las tarjetas de crédito y débito principales, transferencias bancarias y diversos métodos de pago digital."
+        },
+        {
+          question: "¿Cómo se garantiza la seguridad de mi dinero?",
+          answer: "Tu dinero se mantiene en una cuenta de custodia segura y regulada. Utilizamos la más alta tecnología de encriptación y seguimos estrictos protocolos de seguridad."
+        }
+      ].map(faq => (
+        <div class="py-6">
+          <details class="group">
+            <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+              <span class="text-lg font-semibold">{faq.question}</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <p class="text-gray-600 dark:text-gray-300 mt-3 group-open:animate-fadeIn">
+              {faq.answer}
+            </p>
+          </details>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
