@@ -1,43 +1,85 @@
 ---
+const buyerSteps = [
+  {
+    icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z",
+    title: "Acuerdo",
+    description: "Registra la transacción, obtén el código de pago"
+  },
+  {
+    icon: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z",
+    title: "Pago",
+    description: "Realiza el pago y sube tu comprobante"
+  },
+  {
+    icon: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z",
+    title: "Espera",
+    description: "Te avisamos cuando el vendedor envíe el producto"
+  },
+  {
+    icon: "M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4",
+    title: "Recibe",
+    description: "Revisa que todo esté en orden y confírmalo"
+  },
+  {
+    icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+    title: "¡Listo!",
+    description: "Disfruta tu compra segura"
+  }
+];
+
+const sellerSteps = [
+  {
+    icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z",
+    title: "Acuerdo",
+    description: "Registra la transacción, entrega el código de pago"
+  },
+  {
+    icon: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z",
+    title: "Notificación",
+    description: "Te avisamos cuando el comprador pague"
+  },
+  {
+    icon: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z",
+    title: "Envío",
+    description: "Envía el producto y sube la guía de rastreo"
+  },
+  {
+    icon: "M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4",
+    title: "Espera",
+    description: "Aguarda la confirmación del comprador"
+  },
+  {
+    icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+    title: "¡Cobra!",
+    description: "Recibe tu pago de forma segura"
+  }
+];
 ---
+
 <section class="py-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
+    <div class="text-center mb-8">
       <h2 class="text-3xl sm:text-4xl font-inter font-bold mb-4">
         ¿Cómo funciona?
       </h2>
-      <p class="text-lg text-gray-600 dark:text-gray-300">
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
         Proceso simple y seguro en 5 pasos
       </p>
+      <div class="flex justify-center gap-4 mb-8">
+        <button
+          class="px-6 py-2 rounded-full transition-all duration-300 perspective-btn"
+          data-perspective="buyer">
+          Comprador
+        </button>
+        <button
+          class="px-6 py-2 rounded-full transition-all duration-300 perspective-btn"
+          data-perspective="seller">
+          Vendedor
+        </button>
+      </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-      {[
-        {
-          icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z",
-          title: "Regístrate",
-          description: "Crea tu cuenta en segundos"
-        },
-        {
-          icon: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z",
-          title: "Acuerda la compra",
-          description: "Negocia con el vendedor"
-        },
-        {
-          icon: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z",
-          title: "Deposita el pago",
-          description: "El dinero queda en custodia"
-        },
-        {
-          icon: "M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4",
-          title: "Recibe el producto",
-          description: "Verifica su estado"
-        },
-        {
-          icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
-          title: "Confirma",
-          description: "Liberamos el pago"
-        }
-      ].map((step, index) => (
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-8" id="stepsContainer">
+      {buyerSteps.map((step, index) => (
         <div class="flex flex-col items-center text-center group">
           <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors duration-300">
             <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,3 +98,58 @@
     </div>
   </div>
 </section>
+
+<style>
+  .perspective-btn {
+    @apply bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200;
+  }
+  .perspective-btn.active {
+    @apply bg-primary text-white;
+  }
+</style>
+
+<script define:vars={{ buyerSteps, sellerSteps }}>
+  let currentPerspective = 'buyer';
+  const buttons = document.querySelectorAll('.perspective-btn');
+  const stepsContainer = document.getElementById('stepsContainer');
+
+  function updateSteps(perspective) {
+    const steps = perspective === 'buyer' ? buyerSteps : sellerSteps;
+    const elements = stepsContainer.children;
+    
+    for (let i = 0; i < steps.length; i++) {
+      const step = elements[i];
+      const titleEl = step.querySelector('h3');
+      const descEl = step.querySelector('p');
+      const iconPath = step.querySelector('svg path');
+      
+      // Add fade-out class
+      titleEl.classList.add('opacity-0');
+      descEl.classList.add('opacity-0');
+      
+      // Update content after brief delay
+      setTimeout(() => {
+        titleEl.textContent = steps[i].title;
+        descEl.textContent = steps[i].description;
+        iconPath.setAttribute('d', steps[i].icon);
+        titleEl.classList.remove('opacity-0');
+        descEl.classList.remove('opacity-0');
+      }, 150);
+    }
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const perspective = btn.dataset.perspective;
+      if (perspective === currentPerspective) return;
+      
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentPerspective = perspective;
+      updateSteps(perspective);
+    });
+  });
+
+  // Set initial active state
+  buttons[0].classList.add('active');
+</script>
